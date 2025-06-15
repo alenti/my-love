@@ -1,0 +1,253 @@
+/* --- Подключение шрифтов из Google Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@400;700&family=Great+Vibes&family=Open+Sans&display=swap');
+
+/* --- Общие стили для всего проекта --- */
+body {
+    margin: 0;
+    font-family: 'Cormorant Infant', serif;
+    color: white;
+    overflow: hidden; /* Убираем возможную прокрутку */
+}
+
+/* =================================================================== */
+/* СТИЛИ ДЛЯ ГЛАВНОЙ СТРАНИЦЫ (ОСТАЛИСЬ ПРЕЖНИМИ)      */
+/* =================================================================== */
+
+.cover-page {
+    height: 100vh;
+    padding: 20px;
+    position: relative; 
+    background-image: url('photo/main_page.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.glass-plate {
+    background-color: rgba(205, 155, 157, 0.35);
+    border-radius: 20px;
+    box-shadow: 
+        0 4px 15px 0 rgba(0, 0, 0, 0.25),
+        0 10px 50px 0 rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+    color: white;
+    position: absolute;
+    box-sizing: border-box;
+}
+
+.title-plate {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 550px;
+    padding: 30px 40px;
+}
+
+.title-plate h1 {
+    font-size: 100px;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1;
+}
+
+.title-plate h2 {
+    font-size: 45px;
+    font-weight: 400;
+    margin: 10px 0 0 0;
+}
+
+.love-word {
+    font-size: 75px;
+    font-family: 'Great Vibes', cursive;
+    color: #ff0000;
+    font-weight: 400;
+    text-shadow: 0 0 10px rgba(229, 57, 53, 0.4);
+}
+
+.action-plate {
+    left: 50%;
+    bottom: 15%;
+    transform: translateX(-50%);
+    font-size: 32px;
+    font-weight: 400;
+    text-decoration: none;
+    padding: 15px 50px;
+    transition: all 0.3s ease;
+}
+
+.action-plate:hover {
+    background-color: rgba(205, 155, 157, 0.75);
+    transform: translateX(-50%) scale(1.05);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+
+/* =================================================================== */
+/* ОБНОВЛЕННЫЕ СТИЛИ ДЛЯ СТРАНИЦЫ С ПРИЧИНАМИ (reasons.html)   */
+/* =================================================================== */
+
+.reasons-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+    background-color: #252525;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    transition: background-image 0.7s ease-in-out;
+}
+
+.reasons-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.reason-card, .navigation {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.reason-card {
+    max-width: 800px;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.reason-card.fade-out {
+    opacity: 0;
+}
+
+.reason-card h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    /* НОВОЕ: Тень для лучшей читаемости */
+    text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.9);
+}
+
+.reason-card p {
+    font-family: 'Cormorant Infant', serif;
+    font-size: 22px;
+    line-height: 1.6;
+    /* НОВОЕ: Тень для лучшей читаемости */
+    text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.9);
+}
+
+/* НОВОЕ: Класс для смены шрифта отдельных слов */
+.font-gv {
+    font-family: 'Great Vibes', cursive;
+}
+
+.navigation {
+    position: absolute;
+    /* ИЗМЕНЕНО: Увеличен отступ снизу с 50px до 60px */
+    bottom: 60px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5%;
+    box-sizing: border-box;
+}
+
+.navigation button {
+    font-family: 'Cormorant Infant', serif;
+    font-size: 20px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    transition: transform 0.2s;
+    min-width: 150px;
+    text-align: center;
+}
+
+.navigation button:hover {
+    transform: scale(1.1);
+}
+
+.navigation button:disabled {
+    color: #888;
+    cursor: not-allowed;
+    transform: scale(1);
+    opacity: 0.5;
+}
+
+/* =================================================================== */
+/* НОВЫЕ СТИЛИ ДЛЯ ФИНАЛЬНОЙ СТРАНИЦЫ (final.html)             */
+/* =================================================================== */
+
+.final-page-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+
+    /* ВАЖНО: Укажи здесь путь к фону для финальной страницы */
+    background-image: url('photo/final-background.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.final-content {
+    /* Используем тот же эффект стекла */
+    position: static; /* Отменяем абсолютное позиционирование от .glass-plate */
+    transform: none; /* Убираем transform */
+    max-width: 800px;
+    max-height: 90vh; /* Максимальная высота, чтобы не вылезать за экран */
+    overflow-y: auto; /* Если контент не влезет, появится скролл */
+    padding: 5px 40px 40px 40px;
+}
+
+.final-text {
+    font-family: 'Cormorant Infant', serif;
+    font-size: 20px;
+    line-height: 1.7;
+    text-align: left;
+    white-space: pre-wrap; /* Сохраняет форматирование текста */
+    text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.final-video {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 15px; /* Скругляем углы у видео */
+    margin: 30px auto;
+    display: block;
+}
+
+.back-to-start-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    font-size: 18px;
+    font-family: 'Cormorant Infant', serif;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.back-to-start-btn:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+    transform: scale(1.05);
+}
+
+.final-content::-webkit-scrollbar {
+    display: none;
+}
